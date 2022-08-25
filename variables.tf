@@ -1,19 +1,13 @@
 variable "access_key" {
-  description = "access key"
+  default = "AKIAX5X5QY6HVTRYXDYS"
 }
 
 variable "secret_key" {
-  description = "secret key"
+  default = "TcxfoM6v0gZBQBsOCCo4iYAY2IhQhhd8ZIg06UbL"
 }
 
 variable "region" {                
- #   default = "eu-central-1"
-}
-
-
-variable "environment" {
-         type = string
-        default = "TF_VAR_env"
+ default = "eu-central-1"
 }
 
 variable "availabilityzone-a" {
@@ -136,10 +130,6 @@ variable "ingressdefaultCIDRblock" {
 #         default = "TF_VAR_ingressPostgreCIDRblock"
 # }
 
-variable "ruleVal" {
-        type = string
-        default = "*"
-}
 
 variable "mapPublicIP" {
         type = string
