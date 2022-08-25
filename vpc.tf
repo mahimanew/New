@@ -1,10 +1,10 @@
-resource "aws_vpc" "StudentPlacement-integration" {
- cidr_block           = var.vpcCIDRblock
-  instance_tenancy     = var.instanceTenancy
-  enable_dns_support   = var.dnsSupport
-  enable_dns_hostnames = var.dnsHostNames
+resource "aws_vpc" "StudentPlacement-integration-dev" {
+  cidr_block = "172.24.0.0/22"
+  instance_tenancy = "default"
+  enable_dns_hostnames = true
+  enable_dns_support = true
+    
   tags = {
-    Name = "StudentPlacement-integration-DEV"
+    Name = "StudentPlacement-integration-dev"
   }
-  
 }

@@ -1,7 +1,8 @@
 resource "aws_subnet" "StudentPlacement-integration-public-subnet-1a" {
-  vpc_id = aws_vpc.StudentPlacement-integration.id
-  cidr_block = var.subnetCIDRblock-public-a
-  availability_zone = var.availabilityzone-a
+  vpc_id     = aws_vpc.StudentPlacement-integration-dev.id
+  cidr_block = "172.24.1.0/26"
+  map_public_ip_on_launch = true
+  availability_zone = "eu-central-1a"
 
   tags = {
     Name = "StudentPlacement-integration-public-subnet-1a"
@@ -9,7 +10,7 @@ resource "aws_subnet" "StudentPlacement-integration-public-subnet-1a" {
 }
 
 resource "aws_route_table" "StudentPlacement-integration-public-subnet-1a-router" {
-  vpc_id = aws_vpc.StudentPlacement-integration.id
+  vpc_id = aws_vpc.StudentPlacement-integration-dev.id
 
   route {
     cidr_block = "0.0.0.0/0"
